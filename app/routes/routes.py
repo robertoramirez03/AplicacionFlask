@@ -7,3 +7,8 @@ rutas_usuarios = Blueprint("routes", __name__)
 @rutas_usuarios.route("/")
 def index():
     return render_template("index.html")
+
+@rutas_usuarios.route("/base")
+def base():
+    return render_template("base.html")
+

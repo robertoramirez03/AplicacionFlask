@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block title %}Arsa{% endblock %}
+<title>{% block title %}Arsa{% endblock %}</title>
 
 
 {% block content %}
@@ -8,4 +7,7 @@
       ANDA GUAPA QUE TE HEMOS PILLADO
     </p>
     <a href="{{ url_for('routes.index') }}">Conchi te amo</a>
+    <br>
+    <a href="{{ url_for('static', filename='templates/base.html') }}">Pagina base</a>
+    
 {% endblock %}

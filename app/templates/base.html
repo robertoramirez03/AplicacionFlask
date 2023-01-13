@@ -3,14 +3,36 @@
 <head>
     {% block head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Aitana{% endblock %}</title>
+    
     {% endblock %}
+    
+    
 </head>
 <body>
+    <h1>
+        FORMULARIO DEAD BY DAYLIGHT  
+    </h1>
+    <form class="centra">
+		Nombre del jugador:<input type="name" maxlength="15"> <br>
+        Rol favorito<br>
+<input type="radio" name="Sexo">Asesino<br>
+<input type="radio" name="Sexo">Superviviente<br>
+		Fecha de inicio en el juego <input type="date" name="in"><br>
+		Asesino favorito:<input type="name" maxlength="15"> <br>
+        Superviviente favorito:<input type="name" maxlength="15"> <br>
+Cosas que te gusten mucho del juego <input type=""><br>
+<input type="submit"><input type="reset">
+
+	</form>
+        
+        
+        
+    
     <div id="content">{% block content %}{% endblock %}</div>
     <div id="footer">
         {% block footer %}
-        Prueba HTML
+        
         {% endblock %}
     </div>
 </body>
