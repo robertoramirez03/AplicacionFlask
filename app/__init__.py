@@ -9,7 +9,7 @@ db = mysql.connector.connect( # LLAMAMOS AL FUNCION CONNECT PARA CONECTARNOS
     port = 3333,
     user ='root', #USUARIO QUE USAMOS NOSOTROS
     password ='1asir', #CONTRASEÑA CON LA QUE NOS CONECTAMOS
-    database='testFlask'
+    database='rober'
 ) 
 
 
