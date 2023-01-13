@@ -10,7 +10,7 @@
     
 </head>
 <body>
-    <h1>
+    <h1 class="centra">
         FORMULARIO DEAD BY DAYLIGHT  
     </h1>
     <form class="centra">
@@ -22,7 +22,10 @@
 		Asesino favorito:<input type="name" maxlength="15"> <br>
         Superviviente favorito:<input type="name" maxlength="15"> <br>
 Cosas que te gusten mucho del juego <input type=""><br>
-<input type="submit"><input type="reset">
+<p class="centra"> Cuánto te gusta el juego?:<br>
+    <input type="range" name="si"></p><br>
+<input type="submit"><input type="reset"> <br>
+<a href="{{ url_for('routes.index') }}">Página principal</a>
 
 	</form>
         
@@ -35,5 +38,6 @@ Cosas que te gusten mucho del juego <input type=""><br>
         
         {% endblock %}
     </div>
+    
 </body>
 </html>
