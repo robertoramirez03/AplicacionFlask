@@ -21,9 +21,10 @@
 		Fecha de inicio en el juego <input type="date" name="in"><br>
 		Asesino favorito:<input type="name" maxlength="15"> <br>
         Superviviente favorito:<input type="name" maxlength="15"> <br>
-Cosas que te gusten mucho del juego <input type=""><br>
-<p class="centra"> Cuánto te gusta el juego?:<br>
-    <input type="range" name="si"></p><br>
+ Cuánto te gusta el juego?:
+<input type="radio" name="Sexo">Poco
+<input type="radio" name="Sexo">Normal
+<input type="radio" name="Sexo">Mucho <br><br>
 <input type="submit"><input type="reset"> <br>
 <img src="{{ url_for('static', filename='imagenes/negra.jpg') }}"> <br>
 <a href="{{ url_for('routes.index') }}">Página principal</a>
