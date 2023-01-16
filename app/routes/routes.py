@@ -12,3 +12,10 @@ def index():
 def formulario():
     return render_template("formulario.html")
 
+@rutas_usuarios.route("/supervivientes")
+def supervivientes():
+    return render_template("supervivientes.html")
+
+@rutas_usuarios.route("/asesinos")
+def asesinos():
+    return render_template("asesinos.html")
