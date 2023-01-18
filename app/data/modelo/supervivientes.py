@@ -1,7 +1,7 @@
 class Supervivientes:
-    def __init__(self, sexo : str, nombre_superviviente : str, color_de_piel : str, complexion : str):
-        self.sexo = sexo
+    def __init__(self, nombre_jugador : str, nombre_superviviente : str, color_de_pelo : str, complexion : str):
+        self.nombre_jugador = nombre_jugador
         self.nombre_superviviente = nombre_superviviente
-        self.color_de_piel = color_de_piel
+        self.color_de_pelo = color_de_pelo
         self.complexion = complexion
         

@@ -8,10 +8,6 @@ rutas_usuarios = Blueprint("routes", __name__)
 def index():
     return render_template("index.html")
 
-@rutas_usuarios.route("/formulario")
-def formulario():
-    return render_template("formulario.html")
-
 @rutas_usuarios.route("/supervivientes")
 def supervivientes():
     return render_template("supervivientes.html")

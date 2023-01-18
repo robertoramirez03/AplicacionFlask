@@ -1,7 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <title>{% block title %}Formulario{% endblock %}</title>
+    
+    {% endblock %}
+    
+    
+</head>
+<body>
+    <h1 class="centra">
+        FORMULARIO SUPERVIVIENTES  
+    </h1>
+    <form class="centra">
+		Nombre del jugador:<input type="text", name="nombre_jugador" maxlength="15"> <br>
+        <p>Nombre de tu superviviente favorito <br>
+			<select name="superviviente_favorito">
+				<option value="nea">Nea Karlsson</option>
+				<option value="ada">Ada Wong</option>
+			</select>
+		</p>
+		Color de pelo:<input type="text", name="color_de_pelo" maxlength="15"> <br>
+        Complexión física:<input type="text", name="complexion_fisica" maxlength="15"> <br><br>
+<input type="submit"><input type="reset"> <br>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 <h1 class="centra"><img src="{{ url_for('static', filename='imagenes/ada.jpg') }}"></h1><br>
-<div class="centra">
-    <a href="{{ url_for('routes.index') }}">Página principal</a>
-    <a href="{{ url_for('routes.asesinos') }}">Asesinos</a>
-    <a href="{{ url_for('routes.formulario') }}">Formulario</a>
-</div>
+<a href="{{ url_for('routes.index') }}">Página principal</a>
+<a href="{{ url_for('routes.asesinos') }}">Asesinos</a>
+
+
+	</form>
+        
+        
+        
+    
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
