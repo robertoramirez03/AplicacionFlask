@@ -17,23 +17,16 @@
 		Nombre del jugador:<input type="text", name="nombre_jugador" maxlength="15"> <br>
         <p>Nombre de tu superviviente favorito <br>
 			<select name="superviviente_favorito">
-				<option value="1">Nea Karlsson</option>
-				<option value="2">Ada Wong</option>
+				<option value="ada">Ada Wong</option>
+				<option value="felix">Felix Richter</option>
 			</select>
 		</p>
-		Color de pelo:<input type="text", name="color_de_pelo" maxlength="15"> <br>
         <p>Nombre de tu asesino favorito <br>
 			<select name="asesino_favorito">
-				<option value="3">La cazadora</option>
-				<option value="4">El payaso</option>
+				<option value="cazadora">La cazadora</option>
+				<option value="oni">El oni</option>
 			</select>
 		</p>
-		<p>Metros por segundo <br>
-			<select name="metros_por_segundo">
-				<option value="3.8">3.8</option>
-				<option value="4.4">4.4</option>
-                <option value="4.6">4.6</option>
-			</select> <br><br>
 <input type="submit"><input type="reset"> <br>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 <h1 class="centra"><img src="{{ url_for('static', filename='imagenes/ada.jpg') }}"></h1><br>
