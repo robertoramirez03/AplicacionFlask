@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <title>{% block title %}Datos{% endblock %}</title>
+        
+        {% endblock %}
+        
+        
+    </head>
+<body>
+    <h1 class="centra">Datos del formulario</h1><br>
+    {% for survi in Supervivientes %}
+        <tr>
+            <td>{{ survi.Nombre_Superviviente }}</td>
+            <td>{{ survi.Color_Pelo }}</td>
+            <td>{{ survi.Sexo }}</td>
+        </tr>
+        {% endfor %}
+    <div class="centra">
+    <a href="{{ url_for('routes.index') }}">Página principal</a> 
+    <a href="{{ url_for('routes.formulario') }}">Formulario</a>
+    </div>
+</body>

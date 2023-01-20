@@ -4,11 +4,11 @@ import mysql.connector
 
 
 #db = list()
-db = mysql.connector.connect( # LLAMAMOS AL FUNCION CONNECT PARA CONECTARNOS
+db = mysql.connector.connect( 
     host ='informatica.iesquevedo.es',
     port = 3333,
-    user ='root', #USUARIO QUE USAMOS NOSOTROS
-    password ='1asir', #CONTRASEÑA CON LA QUE NOS CONECTAMOS
+    user ='root', 
+    password ='1asir', 
     database='rober'
 ) 
 
