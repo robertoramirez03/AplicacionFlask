@@ -13,7 +13,9 @@ def formulario():
 
 @rutas_usuarios.route("/datos")
 def datos():
-    return render_template("datos.html")
+    datos_services = supervivientes_dao(db.session)
+    return render_template("datos.html,")
+
 
 
 
