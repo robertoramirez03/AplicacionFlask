@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request,  redirect, url_for
 
 from app import db
 rutas_usuarios = Blueprint("routes", __name__)
@@ -20,18 +20,31 @@ def datos():
 
 
 
-@rutas_usuarios.route('/formulario_supervivientes', methods=['POST'])
-def formulario_supervivientes():
+@rutas_usuarios.route('/formulario_jugador', methods=['POST'])
+def formulario_jugador():
     nombre_jugador = request.form['nombre_jugador'] 
     superviviente_favorito = request.form['superviviente_favorito'] 
     asesino_favorito = request.form['asesino_favorito']
 
     if (nombre_jugador and superviviente_favorito and asesino_favorito):
-        cursor = db.database.cursor()  
-        sql = "INSERT INTO Jugadores (Nombre_Jugador,Superviviente_Favorito,Asesino_Favorito) VALUES (%s, %s, %s)" 
+        cursor = db.cursor()  
+        sql = "INSERT INTO Jugadores (Nombre_Jugador,id_superviviente_favorito,id_asesino_favorito) VALUES (%s, %s, %s)" 
         data = (nombre_jugador,superviviente_favorito,asesino_favorito) 
         cursor.execute(sql,data) 
-        db.database.commit() 
+        db.commit()
+    return redirect(url_for('routes.formulario'))
+
+
+@rutas_usuarios.route('/datos') 
+def notas():
+    cursor = db.cursor()
+    cursor.execute("SELECT i.Nombre,n.CodigoAlumno,n.Seguridad,n.Implantacion,n.Redes FROM Notas n INNER JOIN InformacionAlumno i on n.CodigoAlumno = i.CodigoAlumno")
+    myresult = cursor.fetchall() 
+    insertObject = [] 
+    columnNames = [column[0] for column in cursor.description] 
+    for record in myresult:  
+        insertObject.append(dict(zip(columnNames,record))) 
+    cursor.close() 
     
     
 
