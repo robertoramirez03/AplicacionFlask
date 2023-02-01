@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request,  redirect, url_for
+from app.data.supervivientes_dao import Supervivientes_dao
 
 from app import db
 rutas_usuarios = Blueprint("routes", __name__)
@@ -13,8 +14,9 @@ def formulario():
 
 @rutas_usuarios.route("/datos")
 def datos():
-    datos_services = supervivientes_dao(db.session)
-    return render_template("datos.html,")
+    supervivientes_dao = Supervivientes_dao()
+    supervivientes = supervivientes_dao.select_all(db)
+    return render_template("datos.html", supervivientes=supervivientes)
 
 
 
@@ -35,16 +37,7 @@ def formulario_jugador():
     return redirect(url_for('routes.formulario'))
 
 
-@rutas_usuarios.route('/datos') 
-def notas():
-    cursor = db.cursor()
-    cursor.execute("SELECT i.Nombre,n.CodigoAlumno,n.Seguridad,n.Implantacion,n.Redes FROM Notas n INNER JOIN InformacionAlumno i on n.CodigoAlumno = i.CodigoAlumno")
-    myresult = cursor.fetchall() 
-    insertObject = [] 
-    columnNames = [column[0] for column in cursor.description] 
-    for record in myresult:  
-        insertObject.append(dict(zip(columnNames,record))) 
-    cursor.close() 
+
     
     
 
