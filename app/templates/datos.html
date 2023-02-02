@@ -10,15 +10,20 @@
         
     </head>
 <body>
-    <h1 class="centra">Datos del formulario</h1><br>
-    <div class="centra">
+    <h1 class="centra">Datos del formulario</h1>
+    <table  border class="tabla">
+        <tr>
+            <th>Jugador</th>
+            <th>Superviviente favorito</th>
+            <th>Asesino favorito</th>
+        </tr>
     {% for jugador in jugadores %}
         <tr>
             <td>{{ jugador.Nombre_Jugador }}</td>
             <td>{{ jugador.Nombre_Superviviente }}</td>
             <td>{{ jugador.Nombre_Asesino }}</td>
         </tr>
-        {% endfor %}</div>
+    {% endfor %}</table>
     <div class="centra">
     <a href="{{ url_for('routes.index') }}">Página principal</a> 
     <a href="{{ url_for('routes.formulario') }}">Formulario</a>
