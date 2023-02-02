@@ -12,6 +12,7 @@ def index():
 def formulario():
     return render_template("formulario.html")
 
+#SELECT DE LOS JUGADORES
 @rutas_usuarios.route("/datos")
 def datos():
     jugadores_dao = Jugadores_dao()
@@ -21,7 +22,7 @@ def datos():
 
 
 
-
+#INSERTAR JUGADORES:
 @rutas_usuarios.route('/formulario_jugador', methods=['POST'])
 def formulario_jugador():
     nombre_jugador = request.form['nombre_jugador'] 
@@ -35,6 +36,16 @@ def formulario_jugador():
         cursor.execute(sql,data) 
         db.commit()
     return redirect(url_for('routes.formulario'))
+
+#ELIMINAR JUGADORES
+@rutas_usuarios.route("/datos")
+def delete():
+    cursor = db.database.cursor() 
+    sql = "DELETE FROM Jugadores WHERE id=%s"
+    data = (id)  
+    cursor.execute(sql,data) 
+    db.database.commit()
+    return redirect(url_for('routes.datos')) 
 
 
 
