@@ -20,6 +20,16 @@ body{
     border: 1px solid black;
     text-align: center;
     margin-left: 35%;
+    float: left;
+    display: block;
+}
+
+.altura{
+    height: 193px;
+}
+
+.yun{
+    height: 200px;
 }
 
 
