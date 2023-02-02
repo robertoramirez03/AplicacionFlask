@@ -17,13 +17,14 @@
             <th>Jugador</th>
             <th>Superviviente favorito</th>
             <th>Asesino favorito</th>
+            <th>ID del jugador que quieres eliminar</th>
         </tr>
     {% for jugador in jugadores %}
         <tr>
             <td>{{ jugador.Nombre_Jugador }}</td>
             <td>{{ jugador.Nombre_Superviviente }}</td>
             <td>{{ jugador.Nombre_Asesino }}</td>
-            <td><input type = "submit" name = "Eliminar" class = "Delete" value = "Eliminar este jugador"/></td>
+            <td><form class="centra" action="/borrar_datos" method="post"><input type="text"><input type="submit"></form></td>
         </tr>
     {% endfor %}</table>
     <div class="centra"><br>

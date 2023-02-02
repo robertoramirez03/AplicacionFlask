@@ -38,13 +38,14 @@ def formulario_jugador():
     return redirect(url_for('routes.formulario'))
 
 #ELIMINAR JUGADORES
-@rutas_usuarios.route("/datos")
+@rutas_usuarios.route("/borrar_datos", methods=['POST'])
 def delete():
-    cursor = db.database.cursor() 
+    cursor = db.cursor() 
     sql = "DELETE FROM Jugadores WHERE id=%s"
-    data = (id)  
+    data = list()
+    data.append(id)  
     cursor.execute(sql,data) 
-    db.database.commit()
+    db.commit()
     return redirect(url_for('routes.datos')) 
 
 
