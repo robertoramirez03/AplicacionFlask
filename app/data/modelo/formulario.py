@@ -1,6 +1,6 @@
-class Formulario:
-    def __init__(self, nombre_jugador : str, nombre_superviviente : str,  nombre_asesino : str):
-        self.nombre_jugador = nombre_jugador
-        self.nombre_superviviente = nombre_superviviente
-        self.nombre_superviviente = nombre_asesino
+class DatosJugador:
+    def __init__(self, Nombre_Jugador : str, Nombre_Superviviente : str,  Nombre_Asesino : str):
+        self.Nombre_Jugador = Nombre_Jugador
+        self.Nombre_Superviviente = Nombre_Superviviente
+        self.Nombre_Asesino = Nombre_Asesino
         

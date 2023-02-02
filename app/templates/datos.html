@@ -11,13 +11,14 @@
     </head>
 <body>
     <h1 class="centra">Datos del formulario</h1><br>
+    <div class="centra">
     {% for jugador in jugadores %}
         <tr>
             <td>{{ jugador.Nombre_Jugador }}</td>
             <td>{{ jugador.Nombre_Superviviente }}</td>
             <td>{{ jugador.Nombre_Asesino }}</td>
         </tr>
-        {% endfor %}
+        {% endfor %}</div>
     <div class="centra">
     <a href="{{ url_for('routes.index') }}">Página principal</a> 
     <a href="{{ url_for('routes.formulario') }}">Formulario</a>
