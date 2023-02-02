@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request,  redirect, url_for
-from app.data.supervivientes_dao import Jugadores_dao
+from app.data.jugadores_dao import Jugadores_dao
 
 from app import db
 rutas_usuarios = Blueprint("routes", __name__)
