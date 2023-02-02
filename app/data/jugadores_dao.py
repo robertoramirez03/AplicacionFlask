@@ -13,5 +13,6 @@ class Jugadores_dao:
             jugador_en_db[0], jugador_en_db[1], jugador_en_db[2])) 
             cursor.close()
         return jugadores_devueltos
-    
+
+ 
     
