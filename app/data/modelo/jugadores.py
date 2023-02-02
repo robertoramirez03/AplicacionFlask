@@ -1,4 +1,4 @@
-class Supervivientes:
+class Jugador:
     def __init__(self, nombre_superviviente : str, color_pelo : str, sexo : str):
         self.nombre_superviviente = nombre_superviviente
         self.color_pelo = color_pelo

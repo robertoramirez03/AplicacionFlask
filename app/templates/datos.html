@@ -11,11 +11,11 @@
     </head>
 <body>
     <h1 class="centra">Datos del formulario</h1><br>
-    {% for superviviente in supervivientes %}
+    {% for jugador in jugadores %}
         <tr>
-            <td>{{ superviviente.Nombre_Superviviente }}</td>
-            <td>{{ superviviente.Color_Pelo }}</td>
-            <td>{{ superviviente.Sexo }}</td>
+            <td>{{ jugador.Nombre_Jugador }}</td>
+            <td>{{ jugador.Nombre_Superviviente }}</td>
+            <td>{{ jugador.Nombre_Asesino }}</td>
         </tr>
         {% endfor %}
     <div class="centra">

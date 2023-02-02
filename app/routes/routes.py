@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request,  redirect, url_for
-from app.data.supervivientes_dao import Supervivientes_dao
+from app.data.supervivientes_dao import Jugadores_dao
 
 from app import db
 rutas_usuarios = Blueprint("routes", __name__)
@@ -14,9 +14,9 @@ def formulario():
 
 @rutas_usuarios.route("/datos")
 def datos():
-    supervivientes_dao = Supervivientes_dao()
-    supervivientes = supervivientes_dao.select_all(db)
-    return render_template("datos.html", supervivientes=supervivientes)
+    jugadores_dao = Jugadores_dao()
+    jugadores = jugadores_dao.select_all(db)
+    return render_template("datos.html", jugadores=jugadores)
 
 
 

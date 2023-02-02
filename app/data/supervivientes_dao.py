@@ -1,12 +1,12 @@
-from app.data.modelo.supervivientes import Supervivientes
-class Supervivientes_dao:
-    def select_all(self,db) -> list[Supervivientes]:
+from app.data.modelo.jugadores import Jugador
+class Jugadores_dao:
+    def select_all(self,db) -> list[Jugador]:
         cursor = db.cursor()
-        cursor.execute('SELECT * FROM rober.Supervivientes')
-        supervivientes_en_db = cursor.fetchall()
-        supervivientes : list[Supervivientes] = list()
-        for supervivientes_en_db in supervivientes_en_db:
-            supervivientes.append(Supervivientes(
-            supervivientes_en_db[0], supervivientes_en_db[1], supervivientes_en_db[2])) 
+        cursor.execute('SELECT Nombre_jugador, Nombre_Superviviente, Nombre_Asesino FROM rober.Jugadores INNER JOIN rober.Supervivientes on id_superviviente_favorito = Supervivientes.id INNER JOIN rober.Asesinos on id_asesino_favorito = Asesinos.id; ')
+        jugadores_en_db = cursor.fetchall()
+        jugadores_devueltos : list[Jugador] = list()
+        for jugador_en_db in jugadores_en_db:
+            jugadores_devueltos.append(Jugador(
+            jugador_en_db[0], jugador_en_db[1], jugador_en_db[2])) 
             cursor.close()
-            return supervivientes
+        return jugadores_devueltos
