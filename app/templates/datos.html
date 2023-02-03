@@ -10,25 +10,25 @@
         
     </head>
 <body>
-    <h1 class="centra">Datos del formulario</h1>
-    <img class="altura" src="{{ url_for('static', filename='imagenes/rebeca.jpg') }}">
+    <h1 class="centra">Datos del formulario</h1><br>
+    <a href="{{ url_for('routes.index') }}">Página principal</a> 
+    <a href="{{ url_for('routes.formulario') }}">Formulario</a>
     <table  border class="tabla">
         <tr>
             <th>Jugador</th>
             <th>Superviviente favorito</th>
             <th>Asesino favorito</th>
-            <th>ID del jugador que quieres eliminar</th>
         </tr>
     {% for jugador in jugadores %}
         <tr>
             <td>{{ jugador.Nombre_Jugador }}</td>
             <td>{{ jugador.Nombre_Superviviente }}</td>
             <td>{{ jugador.Nombre_Asesino }}</td>
-            <td><form class="centra" action="/borrar_datos" method="post"><input type="text"><input type="submit"></form></td>
         </tr>
     {% endfor %}</table>
-    <div class="centra"><br>
-    <a href="{{ url_for('routes.index') }}">Página principal</a> 
-    <a href="{{ url_for('routes.formulario') }}">Formulario</a>
-    </div>
+    <table>
+        <tr>
+            <td>ID del jugador que quieres eliminar<form class="centra" action="/borrar_datos" method="post"><input type="text" name="id"><input type="submit"></form></td>
+        </tr>
+    </table>
 </body>

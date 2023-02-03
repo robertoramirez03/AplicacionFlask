@@ -21,16 +21,16 @@ body{
     text-align: center;
     margin-left: 35%;
     float: left;
-    display: block;
 }
 
 .altura{
     height: 193px;
 }
 
-.yun{
+.izquierda{
 
-    float: right;
+    left: 50px;
+    
 }
 
 

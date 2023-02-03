@@ -40,6 +40,7 @@ def formulario_jugador():
 #ELIMINAR JUGADORES
 @rutas_usuarios.route("/borrar_datos", methods=['POST'])
 def delete():
+    id = request.form['id'] 
     cursor = db.cursor() 
     sql = "DELETE FROM Jugadores WHERE id=%s"
     data = list()
