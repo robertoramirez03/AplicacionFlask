@@ -16,12 +16,14 @@
     <a href="{{ url_for('routes.formulario') }}">Formulario</a></div><br>
     <table  border class="tabla">
         <tr>
+            <th>ID del jugador</th>
             <th>Jugador</th>
             <th>Superviviente favorito</th>
             <th>Asesino favorito</th>
         </tr>
     {% for jugador in jugadores %}
         <tr>
+            <td>{{ jugador.id }}</td>
             <td>{{ jugador.Nombre_Jugador }}</td>
             <td>{{ jugador.Nombre_Superviviente }}</td>
             <td>{{ jugador.Nombre_Asesino }}</td>
