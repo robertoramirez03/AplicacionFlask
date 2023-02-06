@@ -1,6 +1,6 @@
 FROM python:3.9.16-alpine3.16
 
-WORKDIR /AplicacionFlask
+WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
@@ -10,7 +10,7 @@ COPY . .
 
 EXPOSE 80
 
-WORKDIR /AplicacionFlask
+WORKDIR /app
 
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
