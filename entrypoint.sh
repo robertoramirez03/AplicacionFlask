@@ -1,2 +1,2 @@
 #!/bin/sh
-gunicorn app:AplicacionFlask --bind=0.0.0.0:80
+gunicorn AplicacionFlask:app --bind=0.0.0.0:80
