@@ -14,4 +14,5 @@ WORKDIR /AplicacionFlask
 
 COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
-CMD ["./entrypoint.sh"]
+#CMD ["./entrypoint.sh"]
+ENTRYPOINT ["python3", "./AplicacionFlask/entry_point.py" ]
